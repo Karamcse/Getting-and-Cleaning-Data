@@ -8,16 +8,26 @@
 
 Getting and cleaning data are carried out by the `run_analysis.R` script.
 
-1. For each of the training and test datasets, 
+1. For each of the training and test datasets,
+
     i)  . Read the Dimension files features, activity_label, Train and test data values
+    
     ii) . Take a subset of the columns representing only the mean and standard deviation values.
+
     iii). Join additional columns to represent activity IDs and subject IDs read from `y_<dataset>.txt` and `subject_<dataset>.txt` files respectively.
+
     iv) . Uses descriptive activity names to name the activities in the data set. Assign column names by manipulating the measurement names in `features.txt` to xtest and ytest.
+
     iv) . Appropriately labels the data set with descriptive activity names.
+
 2. Merge the training and the test sets, read as in step 1 to create one master set.
+
 3. Update an additional column with descriptive activity names as specified in `activity_labels.txt`.
+
 4. Melt the dataset by specifying activity ID, name and subject ID as the only ID variables.
+
 5. cast the melted dataset with activity name and subject id as the only IDs and `mean` as the aggregator function.
+
 6. Export casted dataset as `tidy.txt`
 
 
