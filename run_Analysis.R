@@ -20,7 +20,14 @@ colnames(ytest)<-c("ActivityId")
 colnames(subject_train)<-c("SubjectId")
 colnames(subject_test)<-c("SubjectId")
 
-
+#1) Merges the training and the test sets to create one data set.
 master_train<-cbind(xtrain,ytrain,subject_train)
 master_test<-cbind(xtest,ytest,subject_test)
 master<-rbind(master_train,master_test)
+
+#2) Extracts only the measurements on the mean and 
+#standard deviation for each measurement. 
+mean1<-apply(master,2,mean,na.rm=TRUE)
+sd1<-apply(master,2,mean,na.rm=TRUE)
+mean1
+sd1
