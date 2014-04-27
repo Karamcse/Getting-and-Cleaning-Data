@@ -13,6 +13,7 @@ subject_train<-read.table("./train/subject_train.txt")
 xtrain<-read.table("./train/X_train.txt")
 ytrain<-read.table("./train/y_train.txt")
 
+#3) Uses descriptive activity names to name the activities in the data set
 colnames(xtest)<-features$V2
 colnames(xtrain)<-features$V2
 colnames(ytrain)<-c("ActivityId")
@@ -31,3 +32,21 @@ mean1<-apply(master,2,mean,na.rm=TRUE)
 sd1<-apply(master,2,mean,na.rm=TRUE)
 mean1
 sd1
+
+# 4) Appropriately labels the data set with descriptive activity names. 
+master$ActivityId[which(master$ActivityId==1)]<- "WALKING"
+master$ActivityId[which(master$ActivityId==2)]<- "WALKING_UPSTAIRS"
+master$ActivityId[which(master$ActivityId==3)]<- "WALKING_DOWNSTAIRS"
+master$ActivityId[which(master$ActivityId==4)]<- "SITTING"
+master$ActivityId[which(master$ActivityId==5)]<- "STANDING"
+master$ActivityId[which(master$ActivityId==6)]<- "LAYING"
+
+# 5 ) Creates a second, independent tidy data set 
+# with the average of each variable for each activity and each subject. 
+library(reshape2)
+meltdata<-melt(master,id.vars=c("ActivityId","SubjectId"))
+tidy_mean<-dcast(meltdata,ActivityId+SubjectId~variable,mean)
+tidy_sd<-dcast(meltdata,ActivityId+SubjectId~variable,sd)
+tidy<-cbind(tidy_mean,tidy_sd)
+write.table(tidy,"tidy.txt",sep="\t")
+
