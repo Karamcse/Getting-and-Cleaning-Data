@@ -4,6 +4,7 @@ activity_label<-read.table("activity_labels.txt")
 activity_label
 features<-read.table("features.txt")
 features
+
 subject_test<-read.table("./test/subject_test.txt")
 xtest<-read.table("./test/X_test.txt")
 ytest<-read.table("./test/y_test.txt")
