@@ -12,3 +12,15 @@ ytest<-read.table("./test/y_test.txt")
 subject_train<-read.table("./train/subject_train.txt")
 xtrain<-read.table("./train/X_train.txt")
 ytrain<-read.table("./train/y_train.txt")
+
+colnames(xtest)<-features$V2
+colnames(xtrain)<-features$V2
+colnames(ytrain)<-c("ActivityId")
+colnames(ytest)<-c("ActivityId")
+colnames(subject_train)<-c("SubjectId")
+colnames(subject_test)<-c("SubjectId")
+
+
+master_train<-cbind(xtrain,ytrain,subject_train)
+master_test<-cbind(xtest,ytest,subject_test)
+master<-rbind(master_train,master_test)
