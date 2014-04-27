@@ -63,11 +63,8 @@ meltdata<-melt(master,id.vars=c("ActivityId","SubjectId"))
 
 # cast by mean and sd for ActivityId+SubjectId ~ variable
 tidy_mean<-dcast(meltdata,ActivityId+SubjectId~variable,mean)
-tidy_sd<-dcast(meltdata,ActivityId+SubjectId~variable,sd)
 
-# Combine tidy_mean and tidy_sd as tidy data
-tidy<-cbind(tidy_mean,tidy_sd)
 
 #import tidy file
-write.table(tidy,"tidy.txt",sep="\t")
+write.table(tidy_mean,"tidy1.txt",sep="\t")
 
