@@ -52,6 +52,7 @@ The set of variables that were estimated from these signals are:
 
 1. ActivityId: Activity being performed
 2. SubjectId: ID indicating the subject from whom data was collected
+
 3 . tBodyAcc-mean()-X
 4 . tBodyAcc-mean()-Y
 5 . tBodyAcc-mean()-Z
