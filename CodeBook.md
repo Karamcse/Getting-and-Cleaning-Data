@@ -11,17 +11,17 @@ Finally a Fast Fourier Transform (FFT) was applied to some of these signals prod
 These signals were used to estimate variables of the feature vector for each pattern: '-XYZ' is used to denote 3-axial signals in the X, Y and Z directions.
 
 Test and Train data
--subject_train
+*subject_train
 
--xtrain
+*xtrain
 
--ytrain
+*ytrain
 
--subject_test
+*subject_test
 
--xtest
+*xtest
 
--ytest
+*ytest
 
 Master data
 master : master train and master test binded by row
