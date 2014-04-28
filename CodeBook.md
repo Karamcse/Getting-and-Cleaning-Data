@@ -10,11 +10,29 @@ Finally a Fast Fourier Transform (FFT) was applied to some of these signals prod
 
 These signals were used to estimate variables of the feature vector for each pattern: '-XYZ' is used to denote 3-axial signals in the X, Y and Z directions.
 
+Test and Train data
+-subject_train
+-xtrain
+-ytrain
+
+-subject_test
+-xtest
+-ytest
+
+Master data
+master : master train and master test binded by row
+
+Uses descriptive activity names to name the activities in the data set from Feature.txt and activity_label.
+
+
 The set of variables that were estimated from these signals are:
 - mean1: Mean value
 - std1: Standard deviation
 
-#### Data Columns
+Tidy Data set 
+- tidy1.txt sep="\t"
+
+#### Master data
 
 1. ActivityId: Activity being performed
 2. SubjectId: ID indicating the subject from whom data was collected
