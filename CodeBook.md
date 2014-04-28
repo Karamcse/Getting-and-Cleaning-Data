@@ -12,11 +12,15 @@ These signals were used to estimate variables of the feature vector for each pat
 
 Test and Train data
 -subject_train
+
 -xtrain
+
 -ytrain
 
 -subject_test
+
 -xtest
+
 -ytest
 
 Master data
